@@ -20,6 +20,7 @@ If you want to use the feature of heapinfo and tracemalloc , you need to install
 + `libc` : Print the base address of libc
 + `ld` : Print the base address of ld
 + `codebase` : Print the base of code segment
++ `off` : Print the offset of libc-function
 + `heap` : Print the base of heap
 + `got` : Print the Global Offset Table infomation
 + `dyn` : Print the Dynamic section infomation

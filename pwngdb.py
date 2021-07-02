@@ -14,7 +14,7 @@ directory       = path.abspath(directory)
 capsize = 0
 word = ""
 arch = ""
-magic_variable = ["__malloc_hook","__free_hook","__realloc_hook","stdin","stdout","_IO_list_all","__after_morecore_hook"]
+magic_variable = ["__malloc_hook","__free_hook","__realloc_hook","stdin","stdout","stderr", "_IO_list_all", "__after_morecore_hook"]
 magic_function = ["system","execve","open","read","write","gets","setcontext+0x35"]
 
 
@@ -159,18 +159,6 @@ class PwnCmd(object):
         else :
             print("error")
 
-    def got(self):
-        """ Print the got table """
-        processname = getprocname()
-        if processname :
-            cmd = "objdump -R "
-            if iscplus :
-                cmd += "--demangle "
-            cmd += "\"" + processname + "\""
-            got = subprocess.check_output(cmd,shell=True)[:-2].decode('utf8')
-            print(got)
-        else :
-            print("No current process or executable file specified." )
 
     def dyn(self):
         """ Print dynamic section """
