@@ -1,19 +1,35 @@
 # Pwngdb
 
-GDB for pwn.
+GDB for pwn. Fork from <https://github.com/scwuaptx/Pwngdb>.
 
+## Update Log
+### 2021-07-05
+- Remove `got` in this Pwngdb and use the `got command` in pwndbg, because I think the second is more effective.
+- Add some useful commands in `.gdbinit`:
+  - `telescope` don't skip repeating value.
+  - Ignore alarm signal.
+  - Debug both the parent and the chile process.  
+
+### 2021-07-04
+- Add `off` description.
+  
 ## Install
 
 ### install
 	cd ~/
-	git clone https://github.com/scwuaptx/Pwngdb.git 
+	git clone https://github.com/RoderickChan/Pwngdb.git
 	cp ~/Pwngdb/.gdbinit ~/
 
 If you dont want to use gdb-peda , you can modify the gdbinit to remove it.
 
 ### Heapinfo 
 
-If you want to use the feature of heapinfo and tracemalloc , you need to install libc debug file (libc6-dbg & libc6-dbg:i386 for debian package) 
+If you want to use the feature of heapinfo and tracemalloc , you need to install libc debug file (libc6-dbg & libc6-dbg:i386 for debian package)
+
+    sudo apt install libc6-dbg:i386
+    sudo apt install libc6-dbg
+
+
 
 ## Features
 
